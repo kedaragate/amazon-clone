@@ -8,12 +8,14 @@
   text-decoration: none;
   list-style: none;
   color: rgb(19, 25, 33);
+  scroll-behavior: smooth;
 }
+
 body {
   background-color: rgb(240, 240, 240);
-  position: relative;
   overflow-x: hidden;
 }
+
 header {
   width: 100%;
   height: 100px;
@@ -21,12 +23,25 @@ header {
   position: fixed;
   top: 0;
   z-index: 2;
+  font-size: smaller;
 }
 h4 {
   color: white;
-  font-size: medium;
+  font-size: small;
 }
-
+h5 {
+  color: white;
+  font-size: smaller;
+  font-weight: 300;
+}
+p {
+  font-size: x-small;
+}
+i {
+  color: white;
+  text-shadow: 3px 1px 2px black;
+  font-size: larger;
+}
 /* Sub Header 1 styling */
 .sub-header-1 {
   background-color: rgb(19, 25, 33);
@@ -67,6 +82,7 @@ h4 {
   justify-content: center;
   border: 0.5px solid rgb(19, 25, 33);
   cursor: pointer;
+  width: 100px;
 }
 
 .px-5 {
@@ -101,7 +117,7 @@ h4 {
 #search-bar {
   width: 90%;
   height: 100%;
-  font-size: large;
+  font-size: small;
   padding-left: 1rem;
 
   outline: none;
@@ -128,7 +144,7 @@ h4 {
 
 .search-bar-search-icon {
   font-size: larger;
-
+  text-shadow: none;
   color: rgb(19, 25, 33);
 }
 .language-selection-div {
@@ -211,11 +227,11 @@ h4 {
 /* Slider section */
 
 .img-slider {
-  margin: 0 auto;
-  width: 100vw;
-  height: 70vh;
+  margin: 100px auto;
+  width: 100%;
+  height: 400px;
   position: relative;
-  top: 100px;
+  /* top: 100px; */
 
   overflow: hidden;
 }
@@ -223,7 +239,7 @@ h4 {
 .slider-prev-arrow-div {
   position: absolute;
   left: 20px;
-  top: 20%;
+  top: 0;
   font-size: x-large;
   color: white;
   width: 100px;
@@ -237,7 +253,7 @@ h4 {
 .slider-next-arrow-div {
   position: absolute;
   right: 20px;
-  top: 20%;
+  top: 0;
   font-size: x-large;
   color: white;
   width: 100px;
@@ -250,31 +266,37 @@ h4 {
 }
 
 .slider-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  background-repeat: no-repeat;
+  max-width: 100%;
+  height: auto;
+
   position: absolute;
-  filter: saturate(2);
-  filter: brightness(0.8);
 }
 
 /* 1st Product container  */
-
+main {
+  position: relative;
+  /* overflow: hidden; */
+  width: 100%;
+  border: 2px solid red;
+  height: 100vh;
+  /* margin-top: 0; */
+  margin-top: -100px;
+}
 .container-1 {
   position: absolute;
-
+  /* position: fixed; */
+  /* border: 2px solid red; */
   width: 95%;
-  overflow: hidden;
+  /* overflow: hidden;       */
   margin: auto;
-  height: 400px;
-  top: 50%;
+  max-height: 350px;
+  top: 0;
   left: 50%;
-  transform: translate(-50%, 50%);
+  transform: translate(-50%, -50%);
 
   display: grid;
   grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(3, 1fr) 200px;
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 
@@ -283,20 +305,22 @@ h4 {
   display: flex;
   flex-direction: column;
   font-size: smaller;
-  justify-content: space-between;
+  justify-content: flex-start;
   /* padding: 10px; */
   /* margin: 10px; */
+  /* height: 350px; */
 }
 .container-1-subcontainer > h2 {
   padding: 10px;
 
-  height: 70px;
+  min-height: 70px;
 }
 .container-1-subcontainer-row {
   display: flex;
 
   justify-content: space-evenly;
   min-width: 100%;
+  height: 150px;
 }
 
 .rewards-div,
@@ -322,4 +346,36 @@ h4 {
   filter: saturate(1);
 
   object-fit: cover;
+}
+.sellers-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px;
+  max-height: 150px;
+}
+
+.featured-product-div {
+  max-height: 200px;
+}
+.featured-product-div > img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container-2 {
+  position: absolute;
+  top: 200px;
+  display: grid;
+  width: 100%;
+  height: 350px;
+  border: 2px solid green;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 20px;
+}
+.container-2-sub-container {
+  background-color: white;
 }
